@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.activity.GuideActivity">
+    
+    
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/vp_guideActivity_guide">
+
+    </android.support.v4.view.ViewPager>
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/fl_guideActivity"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/ll_guideActivity_indicator">
+        </LinearLayout>
+        <View
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:background="@drawable/redpoint"
+            android:id="@+id/view_guideActivity_redpoint">
+        </View>
+    </FrameLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进入主页面"
+        android:onClick="goToHome"
+        android:id="@+id/bt_guideActivity_guide"
+        android:visibility="invisible"
+        android:layout_above="@id/fl_guideActivity"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
