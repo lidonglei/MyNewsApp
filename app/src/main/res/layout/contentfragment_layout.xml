@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+
+    <!--第二部分-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.example.administrator.pager.NoScrollPage
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/vp_homeActivity_news">
+
+
+        </com.example.administrator.pager.NoScrollPage>
+
+    </LinearLayout>
+
+
+
+
+    <!--第三部分-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.1"
+    android:background="#898989">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rg_homeActivity_select">
+        <RadioButton
+            style="@style/contentFragment"
+            android:text="首页"
+            android:id="@+id/rb_homeActivity_home"
+            android:drawableTop="@drawable/home_selector">
+        </RadioButton>
+        <RadioButton
+            android:text="新闻中心"
+            android:id="@+id/rb_homeActivity_newsCenter"
+            style="@style/contentFragment"
+            android:drawableTop="@drawable/newscenter_seletor">
+        </RadioButton>
+        <RadioButton
+            android:text="智慧服务"
+            android:id="@+id/rb_homeActivity_smartService"
+            style="@style/contentFragment"
+            android:drawableTop="@drawable/smartservice_seletor">
+        </RadioButton>
+        <RadioButton
+            android:text="政务"
+            android:id="@+id/rb_homeActivity_government"
+            style="@style/contentFragment"
+            android:drawableTop="@drawable/govaffairs_seletor">
+        </RadioButton>
+        <RadioButton
+            android:text="设置"
+            android:id="@+id/rb_homeActivity_setting"
+            style="@style/contentFragment"
+            android:drawableTop="@drawable/setting_seletor">
+        </RadioButton>
+    </RadioGroup>
+</LinearLayout>
+
+
+
+</LinearLayout>

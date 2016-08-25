@@ -14,26 +14,50 @@ import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
 public class HomeActivity extends SlidingFragmentActivity {
 
+    private SlidingMenu slidingMenu;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         setBehindContentView(R.layout.slide_homeactivity);
 
-        SlidingMenu slidingMenu = getSlidingMenu();
+        slidingMenu = getSlidingMenu();
         slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        slidingMenu.setBehindOffset(400);
+        slidingMenu.setBehindOffset(600);
+        slidingMenu.setFadeDegree(0.50f);
 
 
-        View inflate = View.inflate(this, R.layout.slide_homeactivity, null);
-        View viewById = inflate.findViewById(R.id.tv_slideHome_activity);
+
 
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.tv_slideHome_activity,new  LeftMenuFragment());
-        fragmentTransaction.replace(R.id.tv_activity_home,new ContentFragment());
+        fragmentTransaction.replace(R.id.fl_slideHomeActivity_replace,new  LeftMenuFragment());
+        fragmentTransaction.replace(R.id.fl_homeActivity_replace,new ContentFragment());
+
+        fragmentTransaction.commit();
+
+
     }
+
+    public void setSlidingMenuAble(boolean b) {
+
+
+        if(b){
+            slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        }else {
+            slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
+
+        }
+
+    }
+
+    public void setSlidingMenuToggle(){
+
+        slidingMenu.toggle();
+    }
+
+
 }

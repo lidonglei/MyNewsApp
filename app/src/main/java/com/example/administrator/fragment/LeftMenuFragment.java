@@ -1,6 +1,7 @@
 package com.example.administrator.fragment;
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Gravity;
@@ -20,6 +21,7 @@ public class LeftMenuFragment extends Fragment {
         TextView textView = new TextView(getActivity());
         textView.setText("mmmmmmm");
         textView.setGravity(Gravity.CENTER);
+        textView.setBackgroundColor(Color.GRAY);
 
 
 

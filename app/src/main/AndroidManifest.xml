@@ -11,14 +11,16 @@
         <activity
             android:name="com.example.administrator.activity.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+
+        </activity>
+        <activity android:name="com.example.administrator.activity.GuideActivity" />
+        <activity android:name="com.example.administrator.activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.administrator.activity.GuideActivity" />
-        <activity android:name="com.example.administrator.activity.HomeActivity"></activity>
     </application>
 
 </manifest>
