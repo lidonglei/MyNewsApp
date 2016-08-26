@@ -14,6 +14,6 @@ public class ServicePage extends  BasePage {
 
     @Override
     protected void initData() {
-        tv_pagerContent_news.setText("ServicePage");
+        tv_pagerContent_news.setText("智慧服务");
     }
 }

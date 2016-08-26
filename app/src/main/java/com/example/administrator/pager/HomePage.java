@@ -14,6 +14,6 @@ public class HomePage extends  BasePage {
 
     @Override
     protected void initData() {
-        tv_pagerContent_news.setText("HomePage");
+        tv_pagerContent_news.setText("首页");
     }
 }

@@ -14,6 +14,6 @@ public class SettingPage extends  BasePage {
 
     @Override
     protected void initData() {
-        tv_pagerContent_news.setText("SettingPage");
+        tv_pagerContent_news.setText("设置");
     }
 }

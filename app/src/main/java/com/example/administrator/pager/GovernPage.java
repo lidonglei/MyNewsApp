@@ -14,6 +14,6 @@ public class GovernPage extends  BasePage {
 
     @Override
     protected void initData() {
-        tv_pagerContent_news.setText("GovernPage");
+        tv_pagerContent_news.setText("政务");
     }
 }
