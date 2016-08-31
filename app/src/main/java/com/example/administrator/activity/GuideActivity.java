@@ -124,10 +124,6 @@ public class GuideActivity extends AppCompatActivity {
         }
 
 
-
-
-
-
     }
 
 

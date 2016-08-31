@@ -13,27 +13,49 @@ import java.util.List;
 
 
 public class Categories {
-
     public int retcode;
-
     public ArrayList<MenuDataInfo> data;
 
-
     public class childrenInfo{
-
         public  int id;
         public  String title;
         public  int type;
         public  String url;
     }
-
     public class MenuDataInfo{
+        public List<childrenInfo> children;
+        public List<childrenInfo> getChildren() {
+            return children;
+        }
+
+        public String getUrl1() {
+            return url1;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public int getType() {
+            return type;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public int getId() {
+            return id;
+        }
+
         public   int id;
         public  String title;
         public  int type;
         public  String url;
         public  String url1;
-        public List<childrenInfo> children;
+
+
+
 
         @Override
         public String toString() {

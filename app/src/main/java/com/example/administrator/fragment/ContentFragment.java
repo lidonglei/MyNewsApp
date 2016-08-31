@@ -43,6 +43,7 @@ public class ContentFragment extends Fragment{
     ArrayList<BasePage> pages;
     private ViewPager vp_homeActivity_news;
     HomeActivity homeActivity;
+    public Categories categories;
 
     @Nullable
     @Override
@@ -56,6 +57,7 @@ public class ContentFragment extends Fragment{
 
         vp_homeActivity_news.setAdapter(new MyViewPagerAdapter());
         rg_homeActivity_select.check(R.id.rb_homeActivity_home);
+
         rg_homeActivity_select.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -68,7 +70,8 @@ public class ContentFragment extends Fragment{
                     case R.id.rb_homeActivity_newsCenter:
                         vp_homeActivity_news.setCurrentItem(1,false);
                         pages.get(1).setSlidingMenu(true);
-                        getLeftMenuData();
+                        NewsPage newsPage = (NewsPage) pages.get(1);
+                        newsPage.getLeftMenuData();
                         break;
                     case R.id.rb_homeActivity_smartService:
                         vp_homeActivity_news.setCurrentItem(2,false);
@@ -82,42 +85,18 @@ public class ContentFragment extends Fragment{
                         vp_homeActivity_news.setCurrentItem(4,false);
                         pages.get(4).setSlidingMenu(false);
                         break;
-
                 }
             }
         });
 
-
         pages=new ArrayList<>();
-
-        pages.add(new HomePage(getActivity()));
-        pages.add(new NewsPage(getActivity()));
-        pages.add(new GovernPage(getActivity()));
-        pages.add(new ServicePage(getActivity()));
-        pages.add(new SettingPage(getActivity()));
+        pages.add(new HomePage(homeActivity));
+        pages.add(new NewsPage(homeActivity));
+        pages.add(new GovernPage(homeActivity));
+        pages.add(new ServicePage(homeActivity));
+        pages.add(new SettingPage(homeActivity));
 
         return inflate;
-    }
-
-    private void getLeftMenuData() {
-
-
-        String url="http://10.0.2.2/manager/categories.json";
-        HttpUtils httpUtils=new HttpUtils();
-        httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
-            @Override
-            public void onSuccess(ResponseInfo<String> responseInfo) {
-
-                String result=responseInfo.result;
-                parseJSON(result);
-            }
-            @Override
-            public void onFailure(HttpException e, String s) {
-
-            }
-        });
-
-
     }
 
 
@@ -127,17 +106,9 @@ public class ContentFragment extends Fragment{
         return pages;
     }
 
-    private void parseJSON(String result){
 
 
-        Gson gson=new Gson();
-        Categories categories = gson.fromJson(result, Categories.class);
 
-        LeftMenuFragment leftMenuFragment = homeActivity.getLeftMenuFragment();
-        leftMenuFragment.setTitle(categories);
-
-
-    }
 
     private class MyViewPagerAdapter extends PagerAdapter{
         @Override
@@ -154,9 +125,7 @@ public class ContentFragment extends Fragment{
         public Object instantiateItem(ViewGroup container, int position){
 
             View view= pages.get(position).mView;
-
             container.addView(view);
-
             return view;
         }
 

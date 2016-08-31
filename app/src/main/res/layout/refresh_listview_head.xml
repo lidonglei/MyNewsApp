@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/common_listview_headview_red_arrow"
+        android:id="@+id/iv_refresh_listView"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2012/5/5"
+        android:gravity="center"
+        android:id="@+id/tv_refresh_listView_indicateDate"
+        android:layout_alignBottom="@id/iv_refresh_listView"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="请下拉刷新"
+        android:layout_above="@id/tv_refresh_listView_indicateDate"
+        android:paddingBottom="10dp"
+        android:id="@+id/tv_refresh_listView_indicate"/>
+
+
+
+
+
+
+
+
+</RelativeLayout>

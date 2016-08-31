@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.administrator.activity.HomeActivity;
 import com.example.administrator.bean.Categories;
 import com.example.administrator.bean.LeftMenuTitle;
+import com.example.administrator.menuPage.BaseMenuPage;
 import com.example.administrator.mynewsapp.R;
 import com.example.administrator.pager.BasePage;
 import com.example.administrator.pager.NewsPage;
@@ -64,13 +65,14 @@ public class LeftMenuFragment extends Fragment {
                 //从leftMenu找到newsPage的linearLayout
                 ContentFragment contentMenuFragment = homeActivity.getContentMenuFragment();
                 ArrayList<BasePage> pages = contentMenuFragment.getPages();
+
                 NewsPage newsPage = (NewsPage) pages.get(1);
 
-                TextView textView = new TextView(homeActivity);
-                textView.setText(position+"");
-                textView.setGravity(Gravity.CENTER);
 
-                newsPage.initLinerLayout(textView);
+                ArrayList<BaseMenuPage> menuPages = newsPage.getMenuPages();
+                BaseMenuPage baseMenuPage = menuPages.get(position);
+
+                newsPage.initLinerLayout(baseMenuPage.getMenuView());
                 Log.e("leftmenu","position ="+position );
 
 

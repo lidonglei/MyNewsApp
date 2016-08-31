@@ -1,4 +1,4 @@
-package com.example.administrator.pager;
+package com.example.administrator.view;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -22,7 +22,11 @@ public class NoScrollPage extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
+        return false;
+    }
 
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
         return false;
     }
 }

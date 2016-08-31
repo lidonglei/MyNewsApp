@@ -20,11 +20,11 @@ public abstract class BasePage {
     protected ImageButton ib_pagerContent_newsMenuLeft;
     protected LinearLayout ll_homeActivity_forContent;
     protected ImageButton ib_pagerContent_newsMenuRight;
-    public Activity mactivity;
+    public HomeActivity homeActivity;
 
 
     public BasePage(Activity  activity){
-        this.mactivity=activity;
+        homeActivity= (HomeActivity) activity;
         mView=View.inflate(activity, R.layout.pager_contentfrag,null);
         initView();
         initData();
@@ -34,7 +34,7 @@ public abstract class BasePage {
     }
 
     public void setSlidingMenu(boolean b) {
-        HomeActivity homeActivity = (HomeActivity) mactivity;
+
         homeActivity.setSlidingMenuAble(b);
     }
 
